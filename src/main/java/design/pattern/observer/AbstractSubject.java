@@ -6,6 +6,7 @@ import java.util.List;
 public class AbstractSubject implements Subject {
 	public String SubjectStat = "";
 	List<Observer> lst = new ArrayList<Observer>();
+
 	public void add(Observer observer) {
 		lst.add(observer);
 	}
@@ -14,8 +15,9 @@ public class AbstractSubject implements Subject {
 		lst.remove(observer);
 	}
 
-	public void notifyObservers() {
-		for(Observer obs : this.lst){
+	public void notifyObservers(String notifyMessage) {
+		this.SubjectStat = notifyMessage;
+		for (Observer obs : this.lst) {
 			obs.update();
 		}
 	}
