@@ -5,17 +5,21 @@ import design.pattern.utils.Utils;
 public class MachineBBuilder implements Builder {
 	Product product = new MachineB();
 
-	public Product addpart1() {
+	public Builder addpart1() {
 		product.addPart("part1");
 		Utils.log("MachineB added the part 1");
 
-		return product;
+		return this;
 	}
 
-	public Product addpart2() {
+	public Builder addpart2() {
 		product.addPart("part2");
 		Utils.log("MachineB added the part 2");
 
+		return this;
+	}
+
+	public Product getProduct() {
 		return product;
 	}
 }

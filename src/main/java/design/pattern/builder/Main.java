@@ -4,15 +4,10 @@ import design.pattern.utils.Utils;
 
 public class Main {
 	public static void main(String[] args) {
-		Builder mab = new MachineABuilder();
-		Builder mbb = new MachineBBuilder();
-		
-		Director d = new Director(mab);
-		Product p = d.create();
+		Product p = Director.create(new MachineABuilder());
 		Utils.log(p.getInfo());
-		
-		Director d2 = new Director(mbb);
-		Product p2 = d2.create();
+
+		Product p2 = Director.create(new MachineBBuilder());
 		Utils.log(p2.getInfo());
 	}
 }

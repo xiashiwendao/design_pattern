@@ -1,7 +1,9 @@
 package design.pattern.builder;
 
 public interface Builder {
-	Product addpart1();
+	Builder addpart1();
 
-	Product addpart2();
+	Builder addpart2();
+	
+	Product getProduct();
 }
