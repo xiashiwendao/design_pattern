@@ -4,5 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface Product {
-	List<String> parts = new ArrayList();
+	public void addPart(String partName);
+	public String getInfo();
 }
