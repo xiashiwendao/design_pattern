@@ -12,7 +12,7 @@ public class FlyweightFactory {
 	public static IWebsite getWebSite(String websiteType) {
 		IWebsite website = null;
 		if (!dic.contains(websiteType)) {
-			Utils.log("该网站类型已经存在");
+			Utils.log("该网站类型不存在");
 			website = websiteType == "news" ? new NewsWebSite() : new BlogWebsite();
 			dic.put(websiteType, website);
 		} else {
